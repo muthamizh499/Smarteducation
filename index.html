@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education – Learning in the Digital Age</title>
+    <meta name="description" content="An intelligent education platform enabling flexible and interactive learning.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <h2>Smart Education</h2>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class='bx bxs-graduation'></i>
+            <span>SmartEdu</span>
+        </div>
+        
+        <div class="nav-search">
+            <i class='bx bx-search'></i>
+            <input type="text" id="global-search" placeholder="Search courses, notes, videos...">
+            <div id="search-results" class="search-results-dropdown hidden"></div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#" data-target="home" class="nav-link active">Home</a></li>
+            <li><a href="#" data-target="dashboard" class="nav-link">Dashboard</a></li>
+            <li><a href="#" data-target="courses" class="nav-link">Courses</a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Tools <i class='bx bx-chevron-down'></i></button>
+                    <div class="dropdown-content">
+                        <a href="#" data-target="timer" class="nav-link"><i class='bx bx-timer'></i> Timer</a>
+                        <a href="#" data-target="planner" class="nav-link"><i class='bx bx-calendar-check'></i> Planner</a>
+                        <a href="#" data-target="notes" class="nav-link"><i class='bx bx-notepad'></i> Notes</a>
+                        <a href="#" data-target="tracker" class="nav-link"><i class='bx bx-bar-chart-alt-2'></i> Progress</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#" data-target="contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                <i class='bx bx-moon'></i>
+            </button>
+            <div class="profile-menu">
+                <img src="https://ui-avatars.com/api/?name=Student&background=2563EB&color=fff" alt="Profile" class="profile-img">
+            </div>
+            <button class="hamburger" id="hamburger-menu">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <aside class="sidebar" id="mobile-sidebar">
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+            <button id="close-sidebar" class="icon-btn"><i class='bx bx-x'></i></button>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="#" data-target="home" class="nav-link active"><i class='bx bx-home'></i> Home</a></li>
+            <li><a href="#" data-target="dashboard" class="nav-link"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
+            <li><a href="#" data-target="courses" class="nav-link"><i class='bx bx-book'></i> Courses</a></li>
+            <li><a href="#" data-target="video" class="nav-link"><i class='bx bx-video'></i> Video Learning</a></li>
+            <li><a href="#" data-target="quiz" class="nav-link"><i class='bx bx-brain'></i> Smart Quiz</a></li>
+            <li><a href="#" data-target="planner" class="nav-link"><i class='bx bx-calendar'></i> Study Planner</a></li>
+            <li><a href="#" data-target="notes" class="nav-link"><i class='bx bx-note'></i> Notes</a></li>
+            <li><a href="#" data-target="tracker" class="nav-link"><i class='bx bx-line-chart'></i> Progress</a></li>
+            <li><a href="#" data-target="certificates" class="nav-link"><i class='bx bx-certification'></i> Certificates</a></li>
+            <li><a href="#" data-target="leaderboard" class="nav-link"><i class='bx bx-trophy'></i> Leaderboard</a></li>
+            <li><a href="#" data-target="timer" class="nav-link"><i class='bx bx-stopwatch'></i> Timer</a></li>
+            <li><a href="#" data-target="contact" class="nav-link"><i class='bx bx-envelope'></i> Contact</a></li>
+        </ul>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="hero-content fade-in-up">
+                    <h1>Learning in the Digital Age</h1>
+                    <p>An intelligent education platform that enables you to learn effectively, flexibly, and comfortably.</p>
+                    <button class="btn btn-primary btn-lg" id="btn-start-learning" data-target="dashboard">Start Learning Now</button>
+                </div>
+                <div class="hero-image slide-in-right">
+                    <!-- CSS will handle the background or we use a simple illustration via CSS shapes/gradients -->
+                    <div class="hero-blob"></div>
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1000&auto=format&fit=crop" alt="Students Learning" class="hero-pic">
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title text-center">Platform Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <i class='bx bx-book-reader feature-icon'></i>
+                        <h3>Interactive Courses</h3>
+                        <p>Learn HTML, CSS, JS, Python and more with progress tracking.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <i class='bx bx-brain feature-icon'></i>
+                        <h3>Smart Quizzes</h3>
+                        <p>Test your knowledge with dynamic scoring and immediate feedback.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <i class='bx bx-time feature-icon'></i>
+                        <h3>Study Tools</h3>
+                        <p>Pomodoro timer, notes manager, and task planner all in one place.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Section -->
+            <div class="about-section glass-card fade-in-up">
+                <h2>About Smart Education</h2>
+                <p>Smart Education is designed to revolutionize how students approach self-paced learning. By combining interactive materials with proven productivity tools, we ensure that every study session is effective.</p>
+            </div>
+        </section>
+
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="page-section hidden">
+            <div class="dashboard-header">
+                <div>
+                    <h1 id="welcome-message">Welcome back, Student! 👋</h1>
+                    <p class="motivation-quote" id="daily-quote">"The beautiful thing about learning is that no one can take it away from you."</p>
+                </div>
+                <div class="streak-badge">
+                    <i class='bx bxs-flame'></i>
+                    <span id="streak-count">0</span> Day Streak
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Stats -->
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class='bx bx-book'></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-courses">0</h3>
+                        <p>Courses Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class='bx bx-time'></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-hours">0h</h3>
+                        <p>Hours Studied</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class='bx bx-target-lock'></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-quiz-avg">0%</h3>
+                        <p>Quiz Average</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i class='bx bx-calendar-check'></i></div>
+                    <div class="stat-details">
+                        <h3 id="stat-attendance">0%</h3>
+                        <p>Attendance</p>
+                    </div>
+                </div>
+
+                <!-- Main Dashboard Panels -->
+                <div class="dashboard-panel glass-card col-span-2">
+                    <div class="panel-header">
+                        <h2>Weekly Progress</h2>
+                        <a href="#" data-target="tracker" class="nav-link view-all">View Details</a>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel glass-card">
+                    <div class="panel-header">
+                        <h2>Daily Goal</h2>
+                    </div>
+                    <div class="goal-container">
+                        <div class="circular-progress" id="daily-goal-progress">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p class="goal-text">2 hours of study</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel glass-card col-span-2">
+                    <div class="panel-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <ul class="activity-list" id="activity-list">
+                        <!-- Populated by JS -->
+                        <li class="empty-state">No recent activity.</li>
+                    </ul>
+                </div>
+                
+                <div class="dashboard-panel glass-card">
+                    <div class="panel-header">
+                        <h2>Calendar Widget</h2>
+                    </div>
+                    <div id="calendar-widget" class="calendar-widget">
+                        <!-- Simple JS Calendar -->
+                        <div class="calendar-header">
+                            <button id="prev-month">&lt;</button>
+                            <span id="month-year"></span>
+                            <button id="next-month">&gt;</button>
+                        </div>
+                        <div class="calendar-days">
+                            <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                        </div>
+                        <div class="calendar-dates" id="calendar-dates"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES SECTION -->
+        <section id="courses" class="page-section hidden">
+            <div class="section-header">
+                <h1>Digital Courses</h1>
+                <div class="filter-group">
+                    <input type="text" id="course-search" placeholder="Search courses...">
+                    <select id="course-category">
+                        <option value="all">All Categories</option>
+                        <option value="web">Web Development</option>
+                        <option value="programming">Programming</option>
+                        <option value="cs">Computer Science</option>
+                    </select>
+                </div>
+            </div>
+            <div class="course-grid" id="course-container">
+                <!-- Courses injected by JS -->
+            </div>
+        </section>
+
+        <!-- VIDEO LEARNING SECTION -->
+        <section id="video" class="page-section hidden">
+            <h1>Video Learning</h1>
+            <div class="video-container glass-card">
+                <div class="video-player">
+                    <iframe id="main-video-frame" width="100%" height="450" src="https://www.youtube.com/embed/pK6m0151cdE?si=pZt14Nq636eD_W7W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-info">
+                        <h2 id="video-title">Introduction to Web Development</h2>
+                        <p id="video-desc">Learn the basics of HTML, CSS, and JavaScript in this comprehensive tutorial.</p>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="mark-video-complete">
+                            <span class="checkmark"></span> Mark as completed
+                        </label>
+                    </div>
+                </div>
+                <div class="video-playlist">
+                    <h3>Playlist</h3>
+                    <ul id="video-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMART QUIZ SECTION -->
+        <section id="quiz" class="page-section hidden">
+            <div class="quiz-container glass-card">
+                <div id="quiz-setup">
+                    <h1>Smart Quiz</h1>
+                    <p>Select a topic to test your knowledge.</p>
+                    <div class="quiz-topics">
+                        <button class="btn btn-outline" onclick="startQuiz('html')">HTML</button>
+                        <button class="btn btn-outline" onclick="startQuiz('css')">CSS</button>
+                        <button class="btn btn-outline" onclick="startQuiz('js')">JavaScript</button>
+                    </div>
+                    <div class="highest-scores" id="highest-scores">
+                        <!-- Displayed by JS -->
+                    </div>
+                </div>
+
+                <div id="quiz-active" class="hidden">
+                    <div class="quiz-header">
+                        <h2 id="quiz-title">Topic Quiz</h2>
+                        <span id="quiz-progress">Question 1 of 5</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="quiz-progress-bar" style="width: 20%;"></div>
+                    </div>
+                    <div class="question-container">
+                        <h3 id="question-text">Question text here?</h3>
+                        <div class="options-grid" id="options-container">
+                            <!-- Options injected by JS -->
+                        </div>
+                    </div>
+                    <div class="quiz-footer">
+                        <button class="btn btn-primary" id="btn-next-question" disabled>Next Question</button>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="hidden text-center">
+                    <h2>Quiz Completed!</h2>
+                    <div class="score-circle">
+                        <span id="final-score">0%</span>
+                    </div>
+                    <p id="quiz-feedback">Great job!</p>
+                    <div class="quiz-actions mt-4">
+                        <button class="btn btn-primary" id="btn-retry-quiz">Retry Quiz</button>
+                        <button class="btn btn-outline nav-link" data-target="certificates">Check Certificates</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDY PLANNER SECTION -->
+        <section id="planner" class="page-section hidden">
+            <h1>Study Planner</h1>
+            <div class="planner-container glass-card">
+                <div class="planner-input-group">
+                    <input type="text" id="task-input" placeholder="Add a new study task...">
+                    <button class="btn btn-primary" id="btn-add-task"><i class='bx bx-plus'></i> Add</button>
+                </div>
+                <div class="planner-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <ul class="task-list" id="task-list">
+                    <!-- Tasks injected by JS -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- NOTES MANAGER SECTION -->
+        <section id="notes" class="page-section hidden">
+            <div class="section-header">
+                <h1>Notes Manager</h1>
+                <input type="text" id="notes-search" placeholder="Search notes...">
+            </div>
+            <div class="notes-layout">
+                <div class="notes-sidebar glass-card">
+                    <button class="btn btn-primary w-100 mb-4" id="btn-new-note"><i class='bx bx-plus'></i> New Note</button>
+                    <ul class="notes-list" id="notes-list">
+                        <!-- Notes list -->
+                    </ul>
+                </div>
+                <div class="notes-editor glass-card">
+                    <input type="text" id="note-title" placeholder="Note Title" class="note-title-input">
+                    <textarea id="note-content" placeholder="Write your notes here..."></textarea>
+                    <div class="note-actions">
+                        <button class="btn btn-primary" id="btn-save-note">Save Note</button>
+                        <button class="btn btn-danger" id="btn-delete-note" style="display:none;">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRACKER & ATTENDANCE SECTION -->
+        <section id="tracker" class="page-section hidden">
+            <h1>Progress & Attendance Tracker</h1>
+            <div class="tracker-grid">
+                <div class="glass-card attendance-card text-center">
+                    <h2>Daily Attendance</h2>
+                    <div class="circular-progress attendance-circle" id="attendance-circle">
+                        <span class="progress-value" id="attendance-percent">0%</span>
+                    </div>
+                    <p class="mt-2">Present <span id="days-present">0</span> / 30 Days</p>
+                    <button class="btn btn-primary mt-4" id="btn-mark-attendance">Mark Attendance Today</button>
+                </div>
+                <div class="glass-card tracker-details">
+                    <h2>Detailed Progress</h2>
+                    <ul class="progress-list">
+                        <li>
+                            <span>Course Completion</span>
+                            <div class="progress-bar-container"><div class="progress-bar bg-primary" id="prog-course" style="width: 0%;"></div></div>
+                        </li>
+                        <li>
+                            <span>Quiz Performance</span>
+                            <div class="progress-bar-container"><div class="progress-bar bg-success" id="prog-quiz" style="width: 0%;"></div></div>
+                        </li>
+                        <li>
+                            <span>Tasks Completed</span>
+                            <div class="progress-bar-container"><div class="progress-bar bg-accent" id="prog-tasks" style="width: 0%;"></div></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES SECTION -->
+        <section id="certificates" class="page-section hidden">
+            <h1>Certificates</h1>
+            <p>Earn certificates by completing courses and scoring over 80% on quizzes.</p>
+            <div class="certificates-grid" id="certificates-container">
+                <!-- Certificates injected by JS -->
+                <div class="empty-state w-100 text-center">No certificates earned yet. Keep learning!</div>
+            </div>
+
+            <!-- Certificate Modal -->
+            <div id="cert-modal" class="modal">
+                <div class="modal-content cert-modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="certificate-preview" id="certificate-preview">
+                        <div class="cert-border">
+                            <h1>Certificate of Completion</h1>
+                            <p>This is proudly presented to</p>
+                            <h2 id="cert-student-name">Student Name</h2>
+                            <p>for successfully completing</p>
+                            <h3 id="cert-course-name">Course Name</h3>
+                            <div class="cert-footer">
+                                <div>
+                                    <p>Date</p>
+                                    <p id="cert-date">2023-10-27</p>
+                                </div>
+                                <div>
+                                    <div class="signature">SmartEdu</div>
+                                    <p>Instructor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4" onclick="window.print()">Print / Download PDF</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERBOARD & ACHIEVEMENTS SECTION -->
+        <section id="leaderboard" class="page-section hidden">
+            <h1>Leaderboard & Achievements</h1>
+            <div class="leaderboard-grid">
+                <div class="glass-card achievements-panel">
+                    <h2>Your Badges</h2>
+                    <div class="badges-grid" id="badges-container">
+                        <!-- Badges injected by JS -->
+                    </div>
+                </div>
+                <div class="glass-card leaderboard-panel">
+                    <h2>Top Learners</h2>
+                    <div class="table-responsive">
+                        <table class="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Student</th>
+                                    <th>XP</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <!-- Leaderboard injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POMODORO TIMER SECTION -->
+        <section id="timer" class="page-section hidden">
+            <div class="timer-container glass-card text-center">
+                <h1>Learning Timer</h1>
+                <div class="timer-tabs mt-4">
+                    <button class="tab-btn active" id="tab-pomodoro">Pomodoro (25m)</button>
+                    <button class="tab-btn" id="tab-short-break">Short Break (5m)</button>
+                </div>
+                <div class="timer-display" id="time-display">25:00</div>
+                <div class="timer-controls">
+                    <button class="btn btn-primary btn-lg" id="btn-timer-start">Start</button>
+                    <button class="btn btn-outline btn-lg" id="btn-timer-reset">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE SECTION -->
+        <section id="contact" class="page-section hidden">
+            <div class="contact-container glass-card">
+                <h1>Contact Us</h1>
+                <p>Have questions? We'd love to hear from you.</p>
+                <form id="contact-form" class="contact-form mt-4">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Smart Education. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating UI Elements -->
+    <button id="btn-scroll-top" class="floating-btn" title="Go to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
